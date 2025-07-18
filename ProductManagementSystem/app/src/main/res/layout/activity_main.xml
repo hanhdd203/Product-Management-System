@@ -61,12 +61,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit"
-        android:id="@+id/btnEdit"></Button>
+        android:id="@+id/btnEdit"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Delete"
-        android:id="@+id/btnDelete"></Button>
+        android:id="@+id/btnDelete"/>
 
 
 

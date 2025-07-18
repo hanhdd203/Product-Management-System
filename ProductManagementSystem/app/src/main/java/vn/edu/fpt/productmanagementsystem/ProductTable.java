@@ -71,14 +71,15 @@ public class ProductTable extends SQLiteOpenHelper
         return db.rawQuery("SELECT * FROM ProductTable WHERE name = ?", new String[]{name});
     }
 
-    public boolean deleteProduct(int id)
-    {
-        String rowId="1"; //Set your row id here
+    public boolean deleteProduct(int id) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        sqLiteDatabase.delete("ProductTable",  id + " = ?",
-                new String[]{String.valueOf(rowId)});  // What to delete
+        int rowsDeleted = sqLiteDatabase.delete(
+                "ProductTable",
+                "id = ?",
+                new String[]{String.valueOf(id)}
+        );
         sqLiteDatabase.close();
-        return true;
+        return rowsDeleted > 0; // ít nhất 1 dòng bị xóa
     }
 
 

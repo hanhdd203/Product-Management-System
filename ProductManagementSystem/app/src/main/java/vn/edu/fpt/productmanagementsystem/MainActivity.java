@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
                     int qty = Integer.parseInt(q);
                     int price = Integer.parseInt(p);
 
-
-
                     product.setName(name);
                     product.setPrice(price);
                     product.setQty(qty);
@@ -91,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
                     String name = etName1.getText().toString();
                     String q = spQty1.getSelectedItem().toString();
 
-                    int qty = Integer.getInteger(q);
+                    int qty = Integer.parseInt(q);
                     String p = etPrice1.getText().toString();
-                    int price = Integer.getInteger(p);
+                    int price = Integer.parseInt(p);
 
                     boolean result = table.updateProduct(id, name, qty, price);
                     if (result) {
@@ -144,20 +142,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-
         StringBuffer buffer = new StringBuffer();
-
         while (res.moveToNext()) {
-
             buffer.append("Id :" + res.getString(0) + "\n");
             buffer.append("Product Name :" + res.getString(1) + "\n");
             buffer.append("Price  :" + res.getString(2) + "\n");
             buffer.append("Quantity :" + res.getString(3) + "\n");
-
-
         }//while
         showMessage("Our Products ", buffer.toString());
-
     }
 
 
